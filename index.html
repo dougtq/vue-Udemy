@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <title>ToDo List</title>
+    <!-- <style type="text/css"  media="screen"></style> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css"/>
+  </head>
+  <body>
+    <div class="container" id="app">
+      <button :title="title">Hover with the mouse</button>
+      <p :class="className">Binding classes</p>
+      <div :class="{ 'is-loading' : isLoading, 'red': isRed }">
+        Teste de complexidade class binding
+      </div>
+      <div :class="colorObject">
+        Teste de complexidade class binding
+      </div>
+      <button @click="toggleClass">Click </button>
+    </div>
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <script type="text/javascript">
+      const app = new Vue({
+        el: '#app',
+        data: {
+          title: 'Hello Vue dev!',
+          className: 'red',
+          isLoading: true,
+          isRed: false,
+        },
+        computed: {
+          colorObject () {
+            return {
+              'is-loading': this.isLoading,
+            'red': this.isRed
+            }
+          }
+        },
+        methods: {
+          toggleClass () {
+            this.isLoading = !this.isLoading
+            this.isRed = !this.isRed
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
