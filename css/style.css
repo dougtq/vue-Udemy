@@ -5,3 +5,11 @@
 .is-loading {
   background-color: red;
 }
+
+.is-ready {
+  background-color: green;
+}
+
+.black {
+  color: black;
+}

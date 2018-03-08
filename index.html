@@ -13,7 +13,7 @@
       <div :class="{ 'is-loading' : isLoading, 'red': isRed }">
         Teste de complexidade class binding
       </div>
-      <div :class="colorObject">
+      <div :class="[background, color]">
         Teste de complexidade class binding
       </div>
       <button @click="toggleClass">Click </button>
@@ -25,6 +25,8 @@
         data: {
           title: 'Hello Vue dev!',
           className: 'red',
+          background: 'is-ready',
+          color: 'black',
           isLoading: true,
           isRed: false,
         },
